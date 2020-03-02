@@ -3,7 +3,7 @@
 const calculadora = {
 
   init:function(){
-    this.asignacionTamaño();
+   // this.asignacionTamaño();
     this.asignarTeclasEnPantalla();
     document.getElementById("on").onclick=this.teclaOn;
     document.getElementById("punto").onclick=this.teclaPunto;
@@ -51,7 +51,7 @@ const calculadora = {
       }
     },
 
-  disminuirTamaño:function(tecla){
+/*   disminuirTamaño:function(tecla){
     tecla.style.width="20%";
     switch (tecla.id) {
       case "mas":
@@ -94,7 +94,7 @@ const calculadora = {
       teclas[i].onmouseup=this.teclaVolverTamaño
     }
   },
-
+ */
   teclaOn:function(){
     let pantalla = document.getElementById("display").firstChild;
     pantalla.nodeValue = "0"
