@@ -178,8 +178,9 @@ const calculadora = {
   varResultado:"",
 
 
-  resultado:function(numero1,operador){
-    let pantalla = document.getElementById("display").firstChild; 
+  resultado:function(numero1,operador){  
+    let resultado;
+    let resultadoLimitado;   
     switch (operador) {
       case "mas":
       calculadora.varResultado=Number(numero1)+Number(calculadora.varNumero2)
@@ -193,10 +194,11 @@ const calculadora = {
       case "dividido":
       calculadora.varResultado=Number(numero1)/Number(calculadora.varNumero2)
       break
-    }
-    
-    return calculadora.varResultado
-  },
+    }  
+    resultado = calculadora.varResultado;
+    resultadoLimitado=resultado.toString().substr(0,8);
+    return resultadoLimitado
+    },
 
 
   resultado2:function(funcionnumero1,funcionoperador){
@@ -213,7 +215,7 @@ const calculadora = {
 
   teclaIgual:function(resultado){
     var pantalla = document.getElementById("display").firstChild;
-      pantalla.nodeValue=resultado.toString();
+      pantalla.nodeValue=resultado
   },
 
   teclaIgual2:function(){
