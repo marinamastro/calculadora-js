@@ -3,7 +3,7 @@
 const calculadora = {
 
   init:function(){
-   // this.asignacionTamaño();
+    this.asignacionTamaño();
     this.asignarTeclasEnPantalla();
     document.getElementById("on").onclick=this.teclaOn;
     document.getElementById("punto").onclick=this.teclaPunto;
@@ -49,52 +49,23 @@ const calculadora = {
       for (let i = 0; i < teclas.length; i++) {
         teclas[i].onclick=this.teclaEnPantalla
       }
-    },
+    },   
 
-/*   disminuirTamaño:function(tecla){
-    tecla.style.width="20%";
-    switch (tecla.id) {
-      case "mas":
-      tecla.style.width="87%";
-        break;
-      case "1":
-      tecla.style.width="27%";
-      break;
-      case "2":
-      tecla.style.width="27%";
-      break;
-      case "3":
-      tecla.style.width="27%";
-      break;
-      case "0":
-      tecla.style.width="27%";
-      break;
-      case "punto":
-      tecla.style.width="27%";
-      break;
-      case "igual":
-      tecla.style.width="27%";
-      break
-    }
-  },
-
-  volverTamañoOriginal:function(tecla){tecla.style.width="auto"},
-
-  teclaDisminuirTamaño:function(event){
-    calculadora.disminuirTamaño(event.target)
+  teclaDisminuirTamaño:function(event){    
+    event.target.classList.add("disminuir")
   },
   teclaVolverTamaño:function(event){
-    calculadora.volverTamañoOriginal(event.target)
+    event.target.classList.remove("disminuir")
   },
 
   asignacionTamaño:function(){
-    const teclas = document.querySelectorAll("img[src]");
+    const teclas = document.querySelectorAll("img");
     for (let i = 0; i < teclas.length; i++) {
       teclas[i].onmousedown=this.teclaDisminuirTamaño;
-      teclas[i].onmouseup=this.teclaVolverTamaño
+      teclas[i].onmouseup=this.teclaVolverTamaño     
     }
   },
- */
+ 
   teclaOn:function(){
     let pantalla = document.getElementById("display").firstChild;
     pantalla.nodeValue = "0"

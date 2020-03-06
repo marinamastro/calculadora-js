@@ -1,6 +1,10 @@
 *{
   box-sizing: border-box;
 }
+
+.disminuir{
+  transform: scale(1.1,1.1);
+}
 body{
   background-image: url("../image/fondo.jpg");
   background-size: cover;
@@ -157,6 +161,7 @@ body{
   background: transparent;
   font-size: 1.1rem;
 }
+
 @media (max-width: 1000px){
 
   #calculadoraFondo{
